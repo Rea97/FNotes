@@ -33,12 +33,12 @@
                             <div>
                                 <p>
                                   <input type="checkbox" id="remember" name="remember" />
-                                  <label for="remember">Recordarme</label>
+                                  <label for="remember">Remember me</label>
                                 </p>
                             </div>
                             <div>
                                 <button type="submit" class="waves-effect waves-light btn">
-                                    Entrar
+                                    Sign in!
                                 </button>
                             </div>
                         </form>
