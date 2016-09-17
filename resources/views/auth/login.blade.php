@@ -22,23 +22,23 @@
 
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <i class="material-icons prefix">account_circle</i>
+                                    <i class="material-icons prefix">vpn_key</i>
                                     <input
                                         id="pass"
                                         type="password"
                                         name="password">
-                                    <label for="pass">Password</label>
+                                    <label for="pass">Contraseña</label>
                                 </div>
                             </div>
                             <div>
                                 <p>
                                   <input type="checkbox" id="remember" name="remember" />
-                                  <label for="remember">Remember me</label>
+                                  <label for="remember">Recordarme</label>
                                 </p>
                             </div>
                             <div>
                                 <button type="submit" class="waves-effect waves-light btn">
-                                    Sign in!
+                                    Entra ya!
                                 </button>
                             </div>
                         </form>
@@ -47,6 +47,4 @@
             </div>
         </div>
     </div>
-
-
 @endsection

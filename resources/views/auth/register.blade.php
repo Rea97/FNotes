@@ -10,30 +10,38 @@
                             {{ csrf_field() }}
                             <div class="row">
                                 <div class="input-field col s12">
+                                    <i class="material-icons prefix">account_circle</i>
                                     <input id="name" type="text" name="name" value="{{ old('name') }}" class="validate">
-                                        <label for="name">Name</label>
+                                        <label for="name">Nombre</label>
                                 </div>
                                 <div class="input-field col s12">
+                                    <i class="material-icons prefix">email</i>
                                     <input id="email" type="email" name="email" value="{{ old('email') }}" class="validate">
                                     <label for="email">E-mail</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
+                                    <i class="material-icons prefix">vpn_key</i>
                                     <input id="password" type="password" name="password" class="validate">
-                                    <label for="password">Password</label>
+                                    <label for="password">Contraseña</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
+                                    <i class="material-icons prefix">vpn_key</i>
                                     <input id="password" type="password" name="password_confirmation" class="validate">
-                                    <label for="password">Confirm password</label>
+                                    <label for="password">Confirma la contraseña</label>
                                 </div>
                             </div>
-                            <button id="register" type="submit" class="btn waves-effect waves-light">
-                                Sign up!
-                                <i class="material-icons right">send</i>
-                            </button>
+                            <div class="row">
+                                <div class="col s6 m10 l10 offset-s3 offset-m1 offset-l1">
+                                    <button id="register" type="submit" class="btn waves-effect waves-light yellow darken-2">
+                                        Unete!
+                                        <i class="material-icons right">send</i>
+                                    </button>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>
