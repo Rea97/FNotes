@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('layout');
+    return view('main.index');
 });
 
 // Authentication routes...
@@ -26,5 +26,5 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 //Ruta provisional
 Route:get('/home', function () {
-    return view('layout');
+    return view('home.index');
 });

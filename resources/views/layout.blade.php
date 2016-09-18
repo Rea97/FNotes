@@ -5,7 +5,7 @@
     <title>FNotes</title>
     @include('partials.css')
 </head>
-<body>
+<body class="grey lighten-3">
     @include('partials.topnav')
     <div class="container">
         <br />
@@ -13,5 +13,9 @@
     </div>
     @include('partials.footer')
     @include('partials.scripts')
+    <script type="text/javascript">
+        $(".button-collapse").sideNav();
+
+    </script>
 </body>
 </html>

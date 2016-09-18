@@ -3,7 +3,7 @@
     <div class="col s12 m12 l12">
         <div class="card-panel red white-text">
             <span>
-                <b>Please, check the follow messages errors:</b>
+                <b>Por favor, verifica los siguientes mensajes de error:</b>
             </span>
             <ul>
                 @foreach ($errors->all() as $error)
