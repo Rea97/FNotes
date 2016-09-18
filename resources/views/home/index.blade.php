@@ -19,6 +19,7 @@
             </nav>
             <br />
             @include('home.partials.welcome')
+            @include('home.partials.create-note')
         </div>
     </div>
 @endsection

@@ -6,7 +6,9 @@
                 <p>Permiteme darte mis mas cordiales saludos mientras te invito a que crees tú primera nota :).</p>
             </div>
             <div class="card-action">
-                <button type="button" class="waves-effect waves-light btn">Crea una nota</button>
+                <button type="button" class="waves-effect waves-light btn" data-target="create-note">
+                    Crea una nota
+                </button>
             </div>
         </div>
     </div>
