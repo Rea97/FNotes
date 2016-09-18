@@ -18,7 +18,7 @@ class RegisterAndLoginUserTest extends TestCase
             ->type('beto@hotmail.com', 'email')
             ->type('123456', 'password')
             ->type('123456', 'password_confirmation')
-            ->press('Sign up!')
+            ->press('Entra ya!')
             ->seeInDatabase('users', ['name' => 'Alberto', 'email' => 'beto@hotmail.com'])
             ->seePageIs('/home');
     }

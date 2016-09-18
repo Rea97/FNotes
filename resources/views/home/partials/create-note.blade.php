@@ -16,11 +16,11 @@
                 <div class="input-field col l6 s12">
                     <i class="material-icons prefix">label</i>
                     <select id="categoria-nota" name="categoria-nota">
-                        <option value="1">Escolar</option>
-                        <option value="2">Hogar</option>
-                        <option value="3">Deportes</option>
-                        <option value="3">Proyectos</option>
-                        <option value="3">Ocio</option>
+                        <option value="escolar">Escolar</option>
+                        <option value="hogar">Hogar</option>
+                        <option value="deportes">Deportes</option>
+                        <option value="proyectos">Proyectos</option>
+                        <option value="ocio">Ocio</option>
                     </select>
                     <label for="categoria-nota">Categoría</label>
                 </div>
