@@ -22,7 +22,7 @@
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <i class="material-icons prefix">vpn_key</i>
+                                    <i class="material-icons prefix">lock</i>
                                     <input
                                         id="pass"
                                         type="password"

@@ -22,14 +22,14 @@
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <i class="material-icons prefix">vpn_key</i>
+                                    <i class="material-icons prefix">lock</i>
                                     <input id="password" type="password" name="password" class="validate">
                                     <label for="password">Contraseña</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <i class="material-icons prefix">vpn_key</i>
+                                    <i class="material-icons prefix">lock</i>
                                     <input id="password" type="password" name="password_confirmation" class="validate">
                                     <label for="password">Confirma la contraseña</label>
                                 </div>

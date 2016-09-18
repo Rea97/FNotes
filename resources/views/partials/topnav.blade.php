@@ -1,8 +1,8 @@
 <nav>
     <div class="nav-wrapper indigo darken-4">
         <ul id="cuenta" class="dropdown-content">
-            <li><a href="#!">Cuenta</a></li>
-            <li><a href="#!">two</a></li>
+            <li><a href="#!">Mi cuenta</a></li>
+            <li><a href="#!">Ajustes</a></li>
             <li class="divider"></li>
             <li><a href="{{ url('auth/logout') }}">Salir</a></li>
         </ul>
@@ -31,8 +31,8 @@
             <li><a href="{{ url('auth/login') }}">Inicia sesión</a></li>
             <li><a href="{{ url('auth/register') }}">Registro</a></li>
             @else
-            <li><a href="#!">Cuenta</a></li>
-            <li><a href="#!">two</a></li>
+            <li><a href="#!">Mi cuenta</a></li>
+            <li><a href="#!">Ajustes</a></li>
             <li><a href="{{ url('auth/logout') }}">Salir</a></li>
             @endif
         </ul>
