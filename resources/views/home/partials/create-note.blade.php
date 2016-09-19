@@ -31,9 +31,13 @@
                 </div>
             </div>
              <div class="modal-footer">
-                <button type="submit" class="modal-action modal-close waves-effect waves-green btn-flat">
-                    <i class="material-icons">note_add</i>
-                    Guardar
+                <button type="submit" class="waves-effect waves-light btn teal darken-2">
+                    <div class="valign-wrapper">
+                        <i class="material-icons valign">note_add</i> Guardar
+                    </div>
+                </button>
+                <button type="button" class="modal-action modal-close waves-effect waves-green btn-flat fn-btn-left-in-modal">
+                    Cancelar
                 </button>
             </div>
         </form>

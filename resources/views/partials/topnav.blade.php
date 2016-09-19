@@ -15,25 +15,35 @@
         </a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             @if (! Auth::check())
-            <li><a href="{{ url('auth/login') }}">Inicia sesión</a></li>
-            <li><a href="{{ url('auth/register') }}">Registro</a></li>
+                <li><a href="{{ url('auth/login') }}">Inicia sesión</a></li>
+                <li><a href="{{ url('auth/register') }}">Registro</a></li>
             @else
-            <li>
-                <a href="#!" data-activates="cuenta" class="dropdown-button">
-                    <i class="material-icons right">account_circle</i>
-                    Menú
-                </a>
-            </li>
+                <li>
+                    <a href="#!" data-activates="cuenta" class="dropdown-button">
+                        <i class="material-icons right">account_circle</i>
+                        Menú
+                    </a>
+                </li>
             @endif
         </ul>
         <ul class="side-nav" id="mobile-demo">
             @if (! Auth::check())
-            <li><a href="{{ url('auth/login') }}">Inicia sesión</a></li>
-            <li><a href="{{ url('auth/register') }}">Registro</a></li>
+                <li><a href="{{ url('auth/login') }}">Inicia sesión</a></li>
+                <li><a href="{{ url('auth/register') }}">Registro</a></li>
             @else
-            <li><a href="#!">Mi cuenta</a></li>
-            <li><a href="#!">Ajustes</a></li>
-            <li><a href="{{ url('auth/logout') }}">Salir</a></li>
+                <div class="grey-text">
+                    <i class="large material-icons center">account_circle</i>
+                </div>
+                <div class="divider"></div>
+                <li>
+                    <a href="#!">Mi cuenta</a>
+                </li>
+                <li>
+                    <a href="#!">Ajustes</a>
+                </li>
+                <li>
+                    <a href="{{ url('auth/logout') }}">Salir</a>
+                </li>
             @endif
         </ul>
     </div>
