@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Note;
 
 class NotesController extends Controller
 {
@@ -38,9 +39,9 @@ class NotesController extends Controller
     public function store(Request $request)
     {
         $note = new Note();
-        $note->title = $request->titulo-nota;
-        $note->category = $request->categoria-nota;
-        $note->description = $request->descripcion-nota;
+        $note->title = $request->input('titulo-nota');
+        $note->category = $request->input('categoria-nota');
+        $note->description = $request->input('descripcion-nota');
         $note->save();
         //Note::create($request->all());
         return redirect()->to('/home')->with('message', 'Nota creada correctamente!');

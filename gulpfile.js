@@ -12,11 +12,17 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.styles(['main.css'], 'public/css/app.css');
+    mix.styles(['materialize/materialize.min.css',
+        'materialize/icon.css',
+        'main.css'
+    ], 'public/css/app.css');
 });
 
 elixir(function(mix) {
-    mix.scripts(['main.js'], 'public/js/app.js');
+    mix.scripts(['jquery.js',
+        'main.js',
+        'materialize.min.js'
+    ], 'public/js/app.js');
 });
 
 elixir(function(mix) {

@@ -6,6 +6,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class NotesResourceTest extends TestCase
 {
+    use DatabaseTransactions;
     /**
      * A basic test example.
      *
@@ -19,13 +20,13 @@ class NotesResourceTest extends TestCase
             ->press('Entra ya!')
             ->seePageIs('/home')
             ->see('Bienvenido Alberto')
-            //->press('boton-modal')
+            ->press('boton-modal')
             ->type('Nueva nota', 'titulo-nota')
             ->select('hogar', 'categoria-nota')
             ->type('Contenido de mi nueva nota', 'descripcion-nota')
             ->press('Guardar')
             ->seePageIs('/home')
-            ->seeInDatabase([
+            ->seeInDatabase('notes', [
                 'title' => 'Nueva nota',
                 'category' => 'hogar',
                 'description' => 'Contenido de mi nueva nota'
