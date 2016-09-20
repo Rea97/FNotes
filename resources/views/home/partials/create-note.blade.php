@@ -2,7 +2,8 @@
 <div id="create-note" class="modal" style="height: auto">
     <div class="modal-content">
         <h4>Crea una nota</h4>
-        <form action="" method="POST">
+        <form action="{{ url('/api/note') }}" method="POST">
+            {{ csrf_field() }}
             <div class="row">
                 <div class="input-field col l6 s12">
                     <i class="material-icons prefix">assignment</i>
@@ -26,7 +27,7 @@
                 </div>
                 <div class="input-field col l12 s12">
                     <i class="material-icons prefix">line_weight</i>
-                    <textarea id="descripcion-nota" class="materialize-textarea"></textarea>
+                    <textarea name="descripcion-nota" id="descripcion-nota" class="materialize-textarea"></textarea>
                     <label for="descripcion-nota">Descripción</label>
                 </div>
             </div>

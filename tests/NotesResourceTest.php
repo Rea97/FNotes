@@ -19,12 +19,17 @@ class NotesResourceTest extends TestCase
             ->press('Entra ya!')
             ->seePageIs('/home')
             ->see('Bienvenido Alberto')
-            ->press('Crea una nota')
+            //->press('boton-modal')
             ->type('Nueva nota', 'titulo-nota')
-            ->select('Hogar', 'categoria-nota')
+            ->select('hogar', 'categoria-nota')
             ->type('Contenido de mi nueva nota', 'descripcion-nota')
             ->press('Guardar')
             ->seePageIs('/home')
-            ->see('Contenido de mi nueva nota');
+            ->seeInDatabase([
+                'title' => 'Nueva nota',
+                'category' => 'hogar',
+                'description' => 'Contenido de mi nueva nota'
+            ]);
+            //->see('Contenido de mi nueva nota');
     }
 }

@@ -5,18 +5,7 @@
             <br />
             <!--  Cuando sea la primera visita del usuario, no mostrar barra de busqueda y en su lugar
                 mostrar solo la tarjeta de bienvenida -->
-            <nav class="white">
-                <div class="nav-wrapper">
-                  <form action="note" method="GET">
-                    <div class="input-field">
-                        <!-- En placeholder poner frases aleatorias de bienvenida como facebook -->
-                        <input name="search" id="search" type="search" placeholder="Realiza una busqueda" autofocus>
-                        <label for="search"><i class="material-icons">search</i></label>
-                        <i class="material-icons">close</i>
-                    </div>
-                  </form>
-                </div>
-            </nav>
+            @include('home.partials.search')
             <br />
 
             @include('home.partials.welcome')
