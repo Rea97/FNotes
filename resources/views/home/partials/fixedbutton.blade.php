@@ -1,5 +1,5 @@
 <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-    <a name="add-note" class="btn-floating btn-large waves-effect waves-light red" href="{{ url('note/create') }}">
+    <button id="boton-modal" type="button" class="btn-floating btn-large waves-effect waves-light red" data-target="create-note">
         <i class="material-icons">add</i>
-    </a>
+    </button>
 </div>

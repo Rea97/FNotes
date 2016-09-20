@@ -25,11 +25,10 @@ Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 //Home
-Route::get('/home', function () {
-    return view('home.index');
-});
+Route::get('/home', 'NotesController@index');
 
 //Api routes
 Route::group(['prefix' => 'api'], function() {
     Route::post('note', 'NotesController@store');
+    Route::delete('note/{id}', 'NotesController@destroy');
 });

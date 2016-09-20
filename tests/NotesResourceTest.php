@@ -20,7 +20,6 @@ class NotesResourceTest extends TestCase
             ->press('Entra ya!')
             ->seePageIs('/home')
             ->see('Bienvenido Alberto')
-            ->press('boton-modal')
             ->type('Nueva nota', 'titulo-nota')
             ->select('hogar', 'categoria-nota')
             ->type('Contenido de mi nueva nota', 'descripcion-nota')
@@ -30,7 +29,7 @@ class NotesResourceTest extends TestCase
                 'title' => 'Nueva nota',
                 'category' => 'hogar',
                 'description' => 'Contenido de mi nueva nota'
-            ]);
-            //->see('Contenido de mi nueva nota');
+            ])
+            ->see('Contenido de mi nueva nota');
     }
 }

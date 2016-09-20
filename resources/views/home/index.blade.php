@@ -7,9 +7,14 @@
                 mostrar solo la tarjeta de bienvenida -->
             @include('home.partials.search')
             <br />
-
-            @include('home.partials.welcome')
-            @include('home.partials.create-note')
+            @if (count($notes) === 0)
+                @include('home.partials.welcome')
+            @endif
         </div>
     </div>
+    @if (count($notes) > 0)
+        @include('home.partials.notes')
+        @include('home.partials.fixedbutton')
+    @endif
+    @include('home.partials.create-note')
 @endsection

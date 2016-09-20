@@ -17,7 +17,8 @@ class NotesController extends Controller
      */
     public function index()
     {
-        //
+        $notes = Note::paginate(12);
+        return view('home.index', compact('notes'));
     }
 
     /**
@@ -89,6 +90,8 @@ class NotesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $note = Note::findOrFail($id);
+        $note->delete();
+        return redirect()->to('/home')->with('message', 'Nota eliminada!');
     }
 }
