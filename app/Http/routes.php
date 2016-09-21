@@ -25,7 +25,10 @@ Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 //Home
-Route::get('/home', 'NotesController@index');
+Route::get('/home', [
+    'middleware' => 'auth',
+    'uses' => 'NotesController@index'
+]);
 
 //Api routes
 Route::group(['prefix' => 'api'], function() {

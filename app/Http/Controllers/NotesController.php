@@ -15,8 +15,14 @@ class NotesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->get('search')) {
+            $notes = Note::where('title', 'LIKE', "%{$request->get('search')}%")
+                    ->paginate(6);
+            $search = true;
+            return view('home.index', compact('notes', 'search'));
+        }
         $notes = Note::paginate(12);
         return view('home.index', compact('notes'));
     }
