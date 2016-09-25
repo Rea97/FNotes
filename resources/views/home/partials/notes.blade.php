@@ -5,7 +5,7 @@
                 <div class="card-content white-text">
                     <span class="card-title truncate">{{ $note->title }}</span>
                     <p>{{ str_limit($note->description) }}</p>
-                    <div class="chip" style="position: absolute; bottom: 80px; left:18px;">
+                    <div class="chip fn-category-label">
                         <h6><i>{{ $note->category }}</i></h6>
                     </div>
                 </div>

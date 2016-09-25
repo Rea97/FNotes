@@ -43,4 +43,7 @@
 .fn-btn-left-in-modal {
     margin-right: 4px;
 }
+.fn-category-label {
+    position: absolute; bottom: 80px; left:18px;
+}
 /*# sourceMappingURL=app.css.map */

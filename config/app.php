@@ -145,6 +145,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * Other Services Providers ...
+         */
+        Styde\BladePagination\ServiceProvider::class,
+
     ],
 
     /*
