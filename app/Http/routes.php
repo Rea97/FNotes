@@ -1,3 +1,4 @@
+
 <?php
 
 /*
@@ -25,10 +26,11 @@ Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 //Home
-Route::get('/home', [
-    'middleware' => 'auth',
-    'uses' => 'NotesController@index'
-]);
+Route::group(['prefix' => 'home', 'middleware' => 'auth'], function() {
+    Route::get('/', 'NotesController@index');
+    Route::get('/notes/{id}', 'NotesController@show');
+});
+
 
 //Api routes
 Route::group(['prefix' => 'api'], function() {

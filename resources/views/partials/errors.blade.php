@@ -13,4 +13,12 @@
         </div>
     </div>
 </div>
+@elseif (session('message'))
+    <div class="col s12 m12 l12">
+        <div class="card-panel teal white-text">
+            <span>
+                {{ session('message') }}
+            </span>
+        </div>
+    </div>
 @endif

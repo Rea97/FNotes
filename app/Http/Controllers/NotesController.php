@@ -103,6 +103,6 @@ class NotesController extends Controller
     {
         $note = Note::findOrFail($id);
         $note->delete();
-        return redirect()->to('/home')->with('message', 'Nota eliminada!');
+        return redirect()->to('/home')->with('message', 'Nota eliminada correctamente!');
     }
 }
