@@ -46,14 +46,14 @@ class NotesController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-          'titulo-note' => 'required',
-          'categoria-note' => 'required',
-          'descripcion-note' => 'required'
+          'title' => 'required',
+          'category' => 'required',
+          'description' => 'required'
         ]);
         $note = new Note();
-        $note->title = $request->input('titulo-nota');
-        $note->category = $request->input('categoria-nota');
-        $note->description = $request->input('descripcion-nota');
+        $note->title = $request->input('title');
+        $note->category = $request->input('category');
+        $note->description = $request->input('description');
         $note->save();
         //Note::create($request->all());
         return redirect()->to('/home')->with('message', 'Nota creada correctamente!');

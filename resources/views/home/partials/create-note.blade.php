@@ -8,27 +8,27 @@
                 <div class="input-field col l6 s12">
                     <i class="material-icons prefix">assignment</i>
                     <input
-                        id="titulo-nota"
+                        id="note-title"
                         type="text"
-                        name="titulo-nota"
+                        name="title"
                         class="validate">
-                    <label for="titulo-nota">Título</label>
+                    <label for="note-title">Título</label>
                 </div>
                 <div class="input-field col l6 s12">
                     <i class="material-icons prefix">label</i>
-                    <select id="categoria-nota" name="categoria-nota">
+                    <select id="note-category" name="category">
                         <option value="escolar">Escolar</option>
                         <option value="hogar">Hogar</option>
                         <option value="deportes">Deportes</option>
                         <option value="proyectos">Proyectos</option>
                         <option value="ocio">Ocio</option>
                     </select>
-                    <label for="categoria-nota">Categoría</label>
+                    <label for="note-category">Categoría</label>
                 </div>
                 <div class="input-field col l12 s12">
                     <i class="material-icons prefix">line_weight</i>
-                    <textarea name="descripcion-nota" id="descripcion-nota" class="materialize-textarea"></textarea>
-                    <label for="descripcion-nota">Descripción</label>
+                    <textarea name="description" id="note-description" class="materialize-textarea"></textarea>
+                    <label for="note-description">Descripción</label>
                 </div>
             </div>
              <div class="modal-footer">
