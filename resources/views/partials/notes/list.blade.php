@@ -1,5 +1,5 @@
 <div class="row">
-    @include ('partials/errors')
+    @include ('partials.components.errors')
     @foreach ($notes as $note)
         <div class="col s12 m6 l4">
             <div class="card small blue-grey darken-1">

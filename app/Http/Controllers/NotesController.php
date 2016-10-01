@@ -21,10 +21,10 @@ class NotesController extends Controller
             $notes = Note::where('title', 'LIKE', "%{$request->get('search')}%")
                     ->paginate(6);
             $search = true;
-            return view('home.index', compact('notes', 'search'));
+            return view('sections.home.index', compact('notes', 'search'));
         }
         $notes = Note::paginate(12);
-        return view('home.index', compact('notes'));
+        return view('sections.home.index', compact('notes'));
     }
 
     /**
@@ -103,6 +103,8 @@ class NotesController extends Controller
     {
         $note = Note::findOrFail($id);
         $note->delete();
-        return redirect()->to('/home')->with('message', 'Nota eliminada correctamente!');
+        return redirect()
+                ->to('/home')
+                ->with('message', 'Nota eliminada correctamente!');
     }
 }

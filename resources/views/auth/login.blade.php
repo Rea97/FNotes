@@ -4,7 +4,7 @@
         <div class="col s12 l6 offset-l3">
             <div class="row">
                 <div class="col s12 m12">
-                    @include('partials.errors')
+                    @include('partials.components.errors')
                     <div class="card-panel blue-grey darken-1 white-text">
                         <form method="POST" action="{{ url('/auth/login') }}">
                             {!! csrf_field() !!}

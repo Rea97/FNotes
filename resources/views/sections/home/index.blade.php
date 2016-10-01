@@ -6,10 +6,10 @@
             <br />
             <!--  Cuando sea la primera visita del usuario, no mostrar barra de busqueda y en su lugar
                 mostrar solo la tarjeta de bienvenida -->
-            @include('home.partials.search')
+            @include('partials.home.search')
             <br />
             @if (count($notes) === 0 && !$search)
-                @include('home.partials.welcome')
+                @include('partials.home.welcome')
             @elseif (count($notes) === 0 && $search)
                 <div class="row">
                     <div class="col s12 m12 l12">
@@ -26,8 +26,8 @@
         </div>
     </div>
     @if (count($notes) > 0)
-        @include('home.partials.notes')
-        @include('home.partials.fixedbutton')
+        @include('partials.notes.list')
+        @include('partials.home.fixedbutton')
     @endif
-    @include('home.partials.create-note')
+    @include('partials.notes.create')
 @endsection
