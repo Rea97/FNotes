@@ -11,9 +11,10 @@
                     </div>
                 </div>
                 <div class="card-action">
-                    <button type="button" class="left btn waves-effect waves-light blue">
+                    <a href="{{ url('/home/notes/'.$note->id) }}"
+                       class="left btn waves-effect waves-light blue">
                         <i class="material-icons">edit</i>
-                    </button>
+                    </a>
                     <form action="{{ url('/api/note/'.$note->id) }}" method="post">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
