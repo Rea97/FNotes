@@ -1,7 +1,7 @@
 <nav>
     <div class="nav-wrapper indigo darken-4">
         <ul id="cuenta" class="dropdown-content">
-            <li><a href="#!">Mi cuenta</a></li>
+            <li><a href="{{ url('/account') }}">Mi cuenta</a></li>
             <li><a href="#!">Ajustes</a></li>
             <li class="divider"></li>
             <li><a href="{{ url('auth/logout') }}">Salir</a></li>
@@ -21,7 +21,7 @@
                 <li>
                     <a href="#!" data-activates="cuenta" class="dropdown-button">
                         <i class="material-icons right">account_circle</i>
-                        Menú
+                        {{ Auth::user()->name }}
                     </a>
                 </li>
             @endif
@@ -36,7 +36,7 @@
                 </div>
                 <div class="divider"></div>
                 <li>
-                    <a href="#!">Mi cuenta</a>
+                    <a href="{{ url('/account') }}">Mi cuenta</a>
                 </li>
                 <li>
                     <a href="#!">Ajustes</a>
