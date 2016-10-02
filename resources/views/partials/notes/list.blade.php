@@ -11,7 +11,7 @@
                     </div>
                 </div>
                 <div class="card-action">
-                    <a href="{{ url('/home/notes/'.$note->id) }}"
+                    <a href="{{ url('/home/note/'.$note->id) }}"
                        class="left btn waves-effect waves-light blue">
                         <i class="material-icons">edit</i>
                     </a>

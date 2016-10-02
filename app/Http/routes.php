@@ -28,12 +28,12 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 //Home
 Route::group(['prefix' => 'home', 'middleware' => 'auth'], function() {
     Route::get('/', 'NotesController@index');
-    Route::get('/notes/{id}', 'NotesController@show');
+    Route::get('/note/{id}', 'NotesController@show');
 });
-
 
 //Api routes
 Route::group(['prefix' => 'api'], function() {
     Route::post('note', 'NotesController@store');
+    Route::put('note/{id}', 'NotesController@update');
     Route::delete('note/{id}', 'NotesController@destroy');
 });

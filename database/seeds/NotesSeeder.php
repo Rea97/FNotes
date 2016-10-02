@@ -16,7 +16,7 @@ class NotesSeeder extends Seeder
             \DB::table('notes')->insert(array(
                 'title' => $faker->sentence(2, true),
                 'category' => $faker->randomElement([
-                    'home', 'ocio', 'tareas', 'deportes', 'proyectos'
+                    'hogar', 'ocio', 'tareas', 'deportes', 'proyectos'
                 ]),
                 'description'=> $faker->paragraph(),
                 'created_at' => date('Y-m-d H:m:s'),

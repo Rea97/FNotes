@@ -23,8 +23,9 @@ class NotesController extends Controller
             $search = true;
             return view('sections.home.index', compact('notes', 'search'));
         }
-        $notes = Note::paginate(12);
-        return view('sections.home.index', compact('notes'));
+        $search = false;
+        $notes = Note::OrderBy('created_at', 'desc')->paginate(12);
+        return view('sections.home.index', compact('notes', 'search'));
     }
 
     /**
@@ -91,7 +92,15 @@ class NotesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'category' => 'required',
+            'description' => 'required'
+        ]);
+        Note::findOrFail($id)->update($request->all());
+        return redirect()
+                ->to('/home')
+                ->with('message', 'Cambios guardados correctamente');
     }
 
     /**

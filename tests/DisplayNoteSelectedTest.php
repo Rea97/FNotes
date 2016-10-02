@@ -22,4 +22,5 @@ class DisplayNoteSelectedTest extends TestCase
         $this->visit('home/notes/1')
             ->see('Titulo de la nota');
     }
+
 }
