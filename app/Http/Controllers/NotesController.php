@@ -2,14 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 
+use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Note;
+use App\Repositories\NoteRepository;
 
 class NotesController extends Controller
 {
+    /**
+     * Instancia del repositorio de notas.
+     * @var NoteRepository
+     */
+    protected $notes;
+
+    public function __construct(NoteRepository $notes)
+    {
+        $this->notes = $notes;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -18,13 +30,15 @@ class NotesController extends Controller
     public function index(Request $request)
     {
         if ($request->get('search')) {
-            $notes = Note::where('title', 'LIKE', "%{$request->get('search')}%")
-                    ->paginate(6);
+            //$notes = Note::where('title', 'LIKE', "%{$request->get('search')}%")
+            //       ->paginate(6);
             $search = true;
+            $notes = $this->notes->forUserSearch($request->user(), $request->get('search'));
             return view('sections.home.index', compact('notes', 'search'));
         }
         $search = false;
-        $notes = Note::OrderBy('created_at', 'desc')->paginate(12);
+        $notes = $this->notes->forUser($request->user());
+        //$notes = Note::OrderBy('created_at', 'desc')->paginate(12);
         return view('sections.home.index', compact('notes', 'search'));
     }
 
@@ -51,13 +65,14 @@ class NotesController extends Controller
           'category' => 'required',
           'description' => 'required'
         ]);
-        $note = new Note();
-        $note->title = $request->input('title');
-        $note->category = $request->input('category');
-        $note->description = $request->input('description');
-        $note->save();
-        //Note::create($request->all());
-        return redirect()->to('/home')->with('message', 'Nota creada correctamente!');
+        $request->user()->notes()->create([
+            'title' => $request->input('title'),
+            'category' => $request->input('category'),
+            'description' => $request->input('description')
+        ]);
+        return redirect()
+                ->to('/home')
+                ->with('message', 'Nota creada correctamente!');
     }
 
     /**

@@ -19,6 +19,7 @@ class NotesSeeder extends Seeder
                     'hogar', 'ocio', 'tareas', 'deportes', 'proyectos'
                 ]),
                 'description'=> $faker->paragraph(),
+                'user_id' => $faker->randomElement([1, 2, 3]),
                 'created_at' => date('Y-m-d H:m:s'),
                 'updated_at' => date('Y-m-d H:m:s')
             ));
