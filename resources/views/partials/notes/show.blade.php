@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col l12">
-        <nav class="teal">
+        <nav class="deep-purple">
             <div class="nav-wrapper">
                 <div class="col s12">
                     <a href="{{ url('/home') }}" class="breadcrumb">Home</a>
@@ -8,7 +8,7 @@
                 </div>
             </div>
         </nav>
-        <div class="card-panel cyan darken-4">
+        <div class="card-panel deep-purple darken-4">
             <form action="{{ url('api/note/'.$note->id) }}" method="post" class="white-text">
                 {{ csrf_field() }}
                 {{ method_field('put') }}
@@ -57,7 +57,7 @@
                         <label for="note-description">Descripción</label>
                     </div>
                     <div class="col l10 offset-l1">
-                        <button class="waves-effect waves-light btn yellow lighten-1">Guardar</button>
+                        <button class="waves-effect waves-light btn amber darken-3">Guardar</button>
                     </div>
                 </div>
             </form>

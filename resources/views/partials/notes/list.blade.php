@@ -2,7 +2,7 @@
     @include ('partials.components.errors')
     @foreach ($notes as $note)
         <div class="col s12 m6 l4">
-            <div class="card small blue-grey darken-1">
+            <div class="card small deep-purple">
                 <div class="card-content white-text">
                     <span class="card-title truncate">{{ $note->title }}</span>
                     <p>{{ str_limit($note->description) }}</p>

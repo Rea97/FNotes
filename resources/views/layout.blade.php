@@ -5,7 +5,7 @@
     <title>FNotes</title>
     @include('partials.assets.css')
 </head>
-<body class="grey lighten-3">
+<body class="deep-purple lighten-4">
     @include('partials.components.topnav')
     <div class="container">
         <br />
