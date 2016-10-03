@@ -57,7 +57,7 @@
                         <label for="note-description">Descripción</label>
                     </div>
                     <div class="col l10 offset-l1">
-                        <button class="waves-effect waves-light btn blue accent-4">Guardar</button>
+                        <button class="waves-effect waves-light btn yellow lighten-1">Guardar</button>
                     </div>
                 </div>
             </form>

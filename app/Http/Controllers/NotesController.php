@@ -105,14 +105,16 @@ class NotesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Note $note)
     {
+        $this->authorize('authChangesOnUserNote', $note);
         $this->validate($request, [
             'title' => 'required',
             'category' => 'required',
             'description' => 'required'
         ]);
-        Note::findOrFail($id)->update($request->all());
+        //Note::findOrFail($id)->update($request->all());
+        $note->update($request->all());
         return redirect()
                 ->to('/home')
                 ->with('message', 'Cambios guardados correctamente');
@@ -124,9 +126,10 @@ class NotesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Note $note)
     {
-        $note = Note::findOrFail($id);
+        $this->authorize('authChangesOnUserNote', $note);
+        //$note = Note::findOrFail($note->id);
         $note->delete();
         return redirect()
                 ->to('/home')

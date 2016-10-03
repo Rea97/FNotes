@@ -25,8 +25,10 @@ class RouteServiceProvider extends ServiceProvider
     public function boot(Router $router)
     {
         //
-
         parent::boot($router);
+
+        //Inyeccion de instancia Note en el parametro note de las rutas delete y update
+        $router->model('note', 'App\Note');
     }
 
     /**

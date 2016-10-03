@@ -12,14 +12,14 @@ class NotesSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        for ($i=0; $i < 30; $i++) {
+        for ($i=0; $i < 15; $i++) {
             \DB::table('notes')->insert(array(
                 'title' => $faker->sentence(2, true),
                 'category' => $faker->randomElement([
                     'hogar', 'ocio', 'tareas', 'deportes', 'proyectos'
                 ]),
                 'description'=> $faker->paragraph(),
-                'user_id' => $faker->randomElement([1, 2, 3]),
+                'user_id' => $faker->randomElement([1, 2]),
                 'created_at' => date('Y-m-d H:m:s'),
                 'updated_at' => date('Y-m-d H:m:s')
             ));

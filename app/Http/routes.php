@@ -35,6 +35,6 @@ Route::group(['middleware' => 'auth'], function() {
 //Api routes
 Route::group(['prefix' => 'api'], function() {
     Route::post('note', 'NotesController@store');
-    Route::put('note/{id}', 'NotesController@update');
-    Route::delete('note/{id}', 'NotesController@destroy');
+    Route::put('note/{note}', 'NotesController@update');
+    Route::delete('note/{note}', 'NotesController@destroy');
 });
