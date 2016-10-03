@@ -20,7 +20,7 @@ class RegisterAndLoginUserTest extends TestCase
             ->type('123456', 'password_confirmation')
             ->press('Entra ya!')
             ->seeInDatabase('users', ['name' => 'Alberto', 'email' => 'beto@hotmail.com'])
-            ->seePageIs('/home');
+            ->seePageIs('/notes');
     }
     /**
      * Prueba para el inicio de sesión
@@ -32,6 +32,6 @@ class RegisterAndLoginUserTest extends TestCase
             ->type('beto@hotmail.com', 'email')
             ->type('123456', 'password')
             ->press('Sign in!')
-            ->seePageIs('/home');
+            ->seePageIs('/notes');
     }
 }

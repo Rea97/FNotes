@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.layout')
 @section('content')
     <div class="row">
         <div class="col s12 l6 offset-l3">

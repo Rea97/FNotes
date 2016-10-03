@@ -1,6 +1,6 @@
 <nav class="white">
     <div class="nav-wrapper">
-        <form action="{{ url('/home') }}" method="GET">
+        <form action="{{ url('notes') }}" method="GET">
             <div class="input-field">
                 <!-- En placeholder poner frases aleatorias de bienvenida como facebook -->
                 <input name="search" id="search" type="search" placeholder="Realiza una busqueda" autofocus>

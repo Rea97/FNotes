@@ -27,14 +27,10 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 //Home
 Route::group(['middleware' => 'auth'], function() {
-    Route::get('/home', 'NotesController@index');
-    Route::get('/home/note/{id}', 'NotesController@show');
-    Route::get('/account', 'AccountController@index');
-});
-
-//Api routes
-Route::group(['prefix' => 'api'], function() {
+    Route::get('/notes', 'NotesController@index');
+    Route::get('/note/{id}', 'NotesController@show');
     Route::post('note', 'NotesController@store');
     Route::put('note/{note}', 'NotesController@update');
     Route::delete('note/{note}', 'NotesController@destroy');
+    Route::get('/account', 'AccountController@index');
 });

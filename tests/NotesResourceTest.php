@@ -18,13 +18,13 @@ class NotesResourceTest extends TestCase
             ->type('beto@hotmail.com', 'email')
             ->type('123456', 'password')
             ->press('Entra ya!')
-            ->seePageIs('/home')
+            ->seePageIs('/notes')
             ->see('Bienvenido Alberto')
             ->type('Nueva nota', 'titulo-nota')
             ->select('hogar', 'categoria-nota')
             ->type('Contenido de mi nueva nota', 'descripcion-nota')
             ->press('Guardar')
-            ->seePageIs('/home')
+            ->seePageIs('/notes')
             ->seeInDatabase('notes', [
                 'title' => 'Nueva nota',
                 'category' => 'hogar',

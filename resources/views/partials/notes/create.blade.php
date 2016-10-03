@@ -2,7 +2,7 @@
 <div id="create-note" class="modal" style="height: auto">
     <div class="modal-content">
         <h4>Crea una nota</h4>
-        <form action="{{ url('/api/note') }}" method="POST">
+        <form action="{{ url('/note') }}" method="POST">
             {{ csrf_field() }}
             <div class="row">
                 <div class="input-field col l6 s12">

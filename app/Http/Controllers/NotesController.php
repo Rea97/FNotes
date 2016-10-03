@@ -34,12 +34,12 @@ class NotesController extends Controller
             //       ->paginate(6);
             $search = true;
             $notes = $this->notes->forUserSearch($request->user(), $request->get('search'));
-            return view('sections.home.index', compact('notes', 'search'));
+            return view('sections.notes.index', compact('notes', 'search'));
         }
         $search = false;
         $notes = $this->notes->forUser($request->user());
         //$notes = Note::OrderBy('created_at', 'desc')->paginate(12);
-        return view('sections.home.index', compact('notes', 'search'));
+        return view('sections.notes.index', compact('notes', 'search'));
     }
 
     /**
@@ -71,7 +71,7 @@ class NotesController extends Controller
             'description' => $request->input('description')
         ]);
         return redirect()
-                ->to('/home')
+                ->to('/notes')
                 ->with('message', 'Nota creada correctamente!');
     }
 
@@ -84,7 +84,7 @@ class NotesController extends Controller
     public function show($id)
     {
         $note = Note::findOrFail($id);
-        return view('sections.home.show', compact('note'));
+        return view('sections.notes.show', compact('note'));
     }
 
     /**
@@ -116,7 +116,7 @@ class NotesController extends Controller
         //Note::findOrFail($id)->update($request->all());
         $note->update($request->all());
         return redirect()
-                ->to('/home')
+                ->to('/notes')
                 ->with('message', 'Cambios guardados correctamente');
     }
 
@@ -132,7 +132,7 @@ class NotesController extends Controller
         //$note = Note::findOrFail($note->id);
         $note->delete();
         return redirect()
-                ->to('/home')
+                ->to('/notes')
                 ->with('message', 'Nota eliminada correctamente!');
     }
 }

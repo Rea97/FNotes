@@ -19,7 +19,7 @@ class DisplayNoteSelectedTest extends TestCase
             'title' => 'Titulo de la nota',
             'content' => 'Contenido de la nota',
         ]);
-        $this->visit('home/notes/1')
+        $this->visit('notes/notes/1')
             ->see('Titulo de la nota');
     }
 
