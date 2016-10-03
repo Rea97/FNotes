@@ -11,6 +11,6 @@ class AccountController extends Controller
 {
     public function index()
     {
-        return 'Mi cuenta';
+        return view('sections.account.index');
     }
 }
