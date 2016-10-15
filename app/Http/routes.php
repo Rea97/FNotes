@@ -25,12 +25,15 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
-//Home
+
 Route::group(['middleware' => 'auth'], function() {
+    //Home
     Route::get('/notes', 'NotesController@index');
     Route::get('/note/{id}', 'NotesController@show');
     Route::post('note', 'NotesController@store');
     Route::put('note/{note}', 'NotesController@update');
     Route::delete('note/{note}', 'NotesController@destroy');
+    //Account
     Route::get('/account', 'AccountController@index');
+    Route::post('/account/photo', 'AccountController@saveProfilePhoto');
 });
