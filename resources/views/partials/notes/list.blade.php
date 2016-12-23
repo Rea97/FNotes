@@ -7,7 +7,7 @@
                     <span class="card-title truncate">{{ $note->title }}</span>
                     <p>{{ str_limit($note->description) }}</p>
                     <div class="chip fn-category-label">
-                        <h6><i>{{ $note->category }}</i></h6>
+                        <h6><i>{{ $note->category->name}}</i></h6>
                     </div>
                 </div>
                 <div class="card-action">

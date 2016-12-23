@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Note;
+use App\Category;
 use App\Repositories\NoteRepository;
 
 class NotesController extends Controller
@@ -65,11 +66,28 @@ class NotesController extends Controller
           'category' => 'required',
           'description' => 'required'
         ]);
-        $request->user()->notes()->create([
+        /*$note = new Note();
+        $note->title = $request->input('title');
+        $note->category_id = $request->input('category');
+        $note->user_id = $request->user()->id;
+        $note->description = $request->input('description');
+        $note->save();*/
+
+        /* Esta forma tambien es valida
+        $note = new Note();
+        $note->title = $request->input('title');
+        $note->category()->associate(Category::find($request->input('category')));
+        $note->user()->associate($request->user());
+        $note->description = $request->input('description');
+        $note->save();
+        */
+        /* Esta forma ya no funcionó al agregar la llave foranea de las categorias
+         $request->user()->notes()->create([
             'title' => $request->input('title'),
-            'category' => $request->input('category'),
+            'category_id' => (int) $request->input('category'),
             'description' => $request->input('description')
         ]);
+        ¨*/
         return redirect()
                 ->to('/notes')
                 ->with('message', 'Nota creada correctamente!');
