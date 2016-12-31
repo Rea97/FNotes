@@ -31,15 +31,12 @@ class NotesController extends Controller
     public function index(Request $request)
     {
         if ($request->get('search')) {
-            //$notes = Note::where('title', 'LIKE', "%{$request->get('search')}%")
-            //       ->paginate(6);
-            $search = true;
             $notes = $this->notes->forUserSearch($request->user(), $request->get('search'));
+            $search = true;
             return view('sections.notes.index', compact('notes', 'search'));
         }
         $search = false;
         $notes = $this->notes->forUser($request->user());
-        //$notes = Note::OrderBy('created_at', 'desc')->paginate(12);
         return view('sections.notes.index', compact('notes', 'search'));
     }
 
@@ -64,14 +61,14 @@ class NotesController extends Controller
         $this->validate($request, [
           'title' => 'required',
           'category' => 'required',
-          'description' => 'required'
+          'content' => 'required'
         ]);
-        /*$note = new Note();
+        $note = new Note();
         $note->title = $request->input('title');
         $note->category_id = $request->input('category');
         $note->user_id = $request->user()->id;
-        $note->description = $request->input('description');
-        $note->save();*/
+        $note->content = $request->input('content');
+        $note->save();
 
         /* Esta forma tambien es valida
         $note = new Note();
@@ -129,7 +126,7 @@ class NotesController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'category' => 'required',
-            'description' => 'required'
+            'content' => 'required'
         ]);
         //Note::findOrFail($id)->update($request->all());
         $note->update($request->all());

@@ -35,5 +35,5 @@ Route::group(['middleware' => 'auth'], function() {
     Route::delete('note/{note}', 'NotesController@destroy');
     //Account
     Route::get('/account', 'AccountController@index');
-    Route::post('/account/photo', 'AccountController@saveProfilePhoto');
+    Route::post('/account/photo', 'AccountController@saveProfilePicture');
 });

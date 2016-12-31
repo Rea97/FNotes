@@ -7,7 +7,7 @@
         <div class="col s12 l6">
             <div class="card">
                 <div class="card-image">
-                    <img src="{{ asset('/storage/'.Auth::user()->id.'/pp/Angular.jpg') }}">
+                    <img src="{{ Auth::user()->profile_picture ?? '/imgs/default.gif' }}">
                     {{-- TODO Generar un helper que retorne la url ya procesada, deberá llevar por parametros id de usuario y nombre de foto, en caso no de enocntrar nada, retornar una ruta de imagen generica --}}
                     <span class="card-title yellow-text">{{ Auth::user()->name }}</span>
                 </div>
@@ -16,14 +16,14 @@
                         {{ csrf_field() }}
                         <div class="file-field input-field">
                             <div class="btn">
-                                <span>File</span>
+                                <span>Foto de perfil</span>
                                 <input type="file" name="photo">
                             </div>
                             <div class="file-path-wrapper">
                                 <input class="file-path validate" type="text">
                             </div>
                         </div><br>
-                        <button type="submit" class="waves-effect waves-light btn-flat right"><i class="material-icons right">cloud</i>Actualizar imagen</button><br>
+                        <button id="actualizar-imagen" type="submit" class="waves-effect waves-light btn-flat right"><i class="material-icons right">cloud</i>Actualizar imagen</button><br>
                     </form>
                 </div>
             </div>

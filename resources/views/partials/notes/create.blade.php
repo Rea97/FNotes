@@ -27,8 +27,8 @@
                 </div>
                 <div class="input-field col l12 s12">
                     <i class="material-icons prefix">line_weight</i>
-                    <textarea name="description" id="note-description" class="materialize-textarea"></textarea>
-                    <label for="note-description">Descripción</label>
+                    <textarea name="content" id="note-content" class="materialize-textarea"></textarea>
+                    <label for="note-content">Contenido</label>
                 </div>
             </div>
              <div class="modal-footer">

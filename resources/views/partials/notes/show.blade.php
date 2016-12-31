@@ -53,7 +53,7 @@
                         <textarea
                                 name="description"
                                 id="note-description"
-                                class="materialize-textarea">{{ $note->description }}</textarea>
+                                class="materialize-textarea">{{ $note->content }}</textarea>
                         <label for="note-description">Descripción</label>
                     </div>
                     <div class="col l10 offset-l1">

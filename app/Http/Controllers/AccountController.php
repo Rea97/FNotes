@@ -16,19 +16,28 @@ class AccountController extends Controller
         return view('sections.account.index');
     }
 
-    public function saveProfilePhoto(Request $request)
+    public function saveProfilePicture(Request $request)
     {
-        $this->validate($request, [
+        /*$this->validate($request, [
             'photo' => 'required|image'
             //Fixme No se está validando correctamente la imagen
-        ]);
-        $user_id = $request->user()->id;
+        ]);*/
+        $user = $request->user();
+        $userId = $user->id;
         $file = $request->file('photo');
-        $nombre = $user_id.'/pp/'.$file->getClientOriginalName();
-        //TODO Guardar nombre de foto en un campo en la tabla de usuarios
+        //dd($file->getClientOriginalName());
+        $nombre = $userId.'/profile_picture/'.$file->getClientOriginalName();
         Storage::disk('public')->put($nombre, File::get($file));
+        if ($file->isValid()) {
+            $user->profile_picture = '/storage/'.$nombre;
+            $user->save();
+            $message = 'Foto de perfil actualizada correctamente.';
+        } else {
+            $message = 'Ha ocurrido un error al intentar actualizar tu foto de perfil. ';
+            $message .= 'Intenta de nuevo mas tarde.';
+        }
         return redirect()
                 ->to('/account')
-                ->with('message', 'Foto de perfil actualizada correctamente.');
+                ->with('message', $message);
     }
 }
