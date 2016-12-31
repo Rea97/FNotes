@@ -122,14 +122,18 @@ class NotesController extends Controller
      */
     public function update(Request $request, Note $note)
     {
-        $this->authorize('authChangesOnUserNote', $note);
+        //$this->authorize('authChangesOnUserNote', $note);
         $this->validate($request, [
             'title' => 'required',
             'category' => 'required',
             'content' => 'required'
         ]);
         //Note::findOrFail($id)->update($request->all());
-        $note->update($request->all());
+        //$note->update($request->all());
+        $note->title = $request->input('title');
+        $note->content = $request->input('content');
+        $note->category_id = $request->input('category');
+        $note->save();
         return redirect()
                 ->to('/notes')
                 ->with('message', 'Cambios guardados correctamente');

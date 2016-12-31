@@ -25,25 +25,25 @@
                     <div class="input-field col l6 s12">
                         <i class="material-icons prefix">label</i>
                         <select id="note-category" name="category">
-                            <option value="escolar"
-                                    {{ ($note->category == 'escolar') ? 'selected': '' }}>
+                            <option value="1"
+                                    {{ ($note->category_id == 1) ? 'selected': '' }}>
                                 Escolar
                             </option>
-                            <option value="hogar"
-                                    {{ ($note->category == 'home') ? 'selected': '' }}>
+                            <option value="2"
+                                    {{ ($note->category_id == 2) ? 'selected': '' }}>
                                 Hogar
                             </option>
-                            <option value="deportes"
-                                    {{ ($note->category == 'deportes') ? 'selected': '' }}>
+                            <option value="3"
+                                    {{ ($note->category_id == 3) ? 'selected': '' }}>
                                 Deportes
                             </option>
-                            <option value="proyectos"
-                                    {{ ($note->category == 'proyectos') ? 'selected': '' }}>
+                            <option value="4"
+                                    {{ ($note->category_id == 4) ? 'selected': '' }}>
                                 Proyectos
                             </option>
-                            <option value="ocio"
-                                    {{ ($note->category == 'ocio') ? 'selected': '' }}>
-                                Ocio
+                            <option value="5"
+                                    {{ ($note->category_id == 5) ? 'selected': '' }}>
+                                Otro
                             </option>
                         </select>
                         <label for="note-category">Categoría</label>
@@ -51,10 +51,10 @@
                     <div class="input-field col l12 s12">
                         <i class="material-icons prefix">line_weight</i>
                         <textarea
-                                name="description"
-                                id="note-description"
+                                name="content"
+                                id="note-content"
                                 class="materialize-textarea">{{ $note->content }}</textarea>
-                        <label for="note-description">Descripción</label>
+                        <label for="note-content">Contenido</label>
                     </div>
                     <div class="col l10 offset-l1">
                         <button class="waves-effect waves-light btn amber darken-3">Guardar</button>
