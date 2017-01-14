@@ -40,4 +40,15 @@ class AccountController extends Controller
                 ->to('/account')
                 ->with('message', $message);
     }
+
+    public function deleteProfilePicture(Request $request)
+    {
+        $user = $request->user();
+        $user->profile_picture = null;
+        $user->save();
+        $message = 'Se ha eliminado correctamente tu foto de perfil.';
+        return redirect()
+                ->to('/account')
+                ->with('message', $message);
+    }
 }

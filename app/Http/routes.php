@@ -36,4 +36,5 @@ Route::group(['middleware' => 'auth'], function() {
     //Account
     Route::get('/account', 'AccountController@index');
     Route::post('/account/photo', 'AccountController@saveProfilePicture');
+    Route::delete('/account/photo', 'AccountController@deleteProfilePicture');
 });

@@ -23,7 +23,12 @@
                                 <input class="file-path validate" type="text">
                             </div>
                         </div><br>
-                        <button id="actualizar-imagen" type="submit" class="waves-effect waves-light btn-flat right"><i class="material-icons right">cloud</i>Actualizar imagen</button><br>
+                        <button id="actualizar-imagen" type="submit" class="waves-effect waves-light btn-flat right"><i class="material-icons right">cloud</i>Actualizar imagen</button>
+                    </form>
+                    <form action="{{ url('/account/photo/') }}" method="post">
+                        {{ csrf_field() }}
+                        {{ method_field('delete') }}
+                        <button id="eliminar-imagen" type="submit" class="waves-effect waves-light btn-flat right"><i class="material-icons right">delete</i>Eliminar imagen</button><br>
                     </form>
                 </div>
             </div>
