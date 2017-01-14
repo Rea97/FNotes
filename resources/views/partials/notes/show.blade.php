@@ -7,7 +7,7 @@
                     <a href="#!" class="breadcrumb">{{ $note->title }}</a>
                 </div>
             </div>
-        </nav>
+        </nav> <script>console.log("xsxs")</script>
         <div class="card-panel deep-purple darken-4">
             <form action="{{ url('api/note/'.$note->id) }}" method="post" class="white-text">
                 {{ csrf_field() }}
