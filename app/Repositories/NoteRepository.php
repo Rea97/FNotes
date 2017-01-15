@@ -47,10 +47,15 @@ class NoteRepository
     public function forUserSearch(User $user, $search)
     {
         return $this->note->where('user_id', $user->id)
+<<<<<<< HEAD
                     ->where(function ($query) use ($search) {
                         $query->where('title', 'LIKE', "%{$search}%")
                             ->orWhere('content', 'LIKE', "%{$search}%");
                     })
+=======
+                    ->where('title', 'LIKE', "%{$search}%")
+                    ->orWhere('content', 'LIKE', "%{$search}%")
+>>>>>>> develop
                     ->orderBy('created_at', 'desc')
                     ->paginate(6);
     }
