@@ -8,6 +8,21 @@ use App\Note;
 class NoteRepository
 {
     /**
+     * @var Note
+     */
+    protected $note;
+
+    /**
+     * NoteRepository constructor.
+     *
+     * @param Note $note
+     */
+    public function __construct(Note $note)
+    {
+        $this->note = $note;
+    }
+
+    /**
      * Retorna las notas pertenecientes al usuario actual.
      *
      * @param User $user
@@ -16,7 +31,7 @@ class NoteRepository
      */
     public function forUser(User $user)
     {
-        return Note::where('user_id', $user->id)
+        return $this->note->where('user_id', $user->id)
                     ->orderBy('created_at', 'desc')
                     ->paginate(12);
     }
@@ -31,8 +46,11 @@ class NoteRepository
      */
     public function forUserSearch(User $user, $search)
     {
-        return Note::where('user_id', $user->id)
-                    ->where('title', 'LIKE', "%{$search}%")
+        return $this->note->where('user_id', $user->id)
+                    ->where(function ($query) use ($search) {
+                        $query->where('title', 'LIKE', "%{$search}%")
+                            ->orWhere('content', 'LIKE', "%{$search}%");
+                    })
                     ->orderBy('created_at', 'desc')
                     ->paginate(6);
     }

@@ -122,7 +122,7 @@ class NotesController extends Controller
      */
     public function update(Request $request, Note $note)
     {
-        //$this->authorize('authChangesOnUserNote', $note);
+        $this->authorize('authChangesOnUserNote', $note);
         $this->validate($request, [
             'title' => 'required',
             'category' => 'required',
