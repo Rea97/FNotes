@@ -7,7 +7,7 @@
         <div class="col s12 l6">
             <div class="card">
                 <div class="card-image">
-                    <img src="{{ Auth::user()->profile_picture ?? '/imgs/default.gif' }}">
+                    <img src="{{ Auth::user()->profile_picture ? 'storage/'.Auth::user()->profile_picture : '/imgs/default.gif' }}">
                     {{-- TODO Generar un helper que retorne la url ya procesada, deberá llevar por parametros id de usuario y nombre de foto, en caso no de enocntrar nada, retornar una ruta de imagen generica --}}
                     <span class="card-title yellow-text">{{ Auth::user()->name }}</span>
                 </div>

@@ -19,9 +19,12 @@ class AccountController extends Controller
     public function saveProfilePicture(Request $request)
     {
         /*$this->validate($request, [
-            'photo' => 'required|image'
-            //Fixme No se está validando correctamente la imagen
-        ]);*/
+        'photo' => 'required|image'
+        //Fixme No se está validando correctamente la imagen
+    ]);*/
+        if ($request->user()->profile_picture) {
+            Storage::disk('public')->delete($request->user()->profile_picture);
+        }
         $user = $request->user();
         $userId = $user->id;
         $file = $request->file('photo');
@@ -29,7 +32,7 @@ class AccountController extends Controller
         $nombre = $userId.'/profile_picture/'.$file->getClientOriginalName();
         Storage::disk('public')->put($nombre, File::get($file));
         if ($file->isValid()) {
-            $user->profile_picture = '/storage/'.$nombre;
+            $user->profile_picture = $nombre;
             $user->save();
             $message = 'Foto de perfil actualizada correctamente.';
         } else {
@@ -43,10 +46,15 @@ class AccountController extends Controller
 
     public function deleteProfilePicture(Request $request)
     {
-        $user = $request->user();
-        $user->profile_picture = null;
-        $user->save();
-        $message = 'Se ha eliminado correctamente tu foto de perfil.';
+        if ($request->user()->profile_picture) {
+            Storage::disk('public')->delete($request->user()->profile_picture);
+            $user = $request->user();
+            $user->profile_picture = null;
+            $user->save();
+            $message = 'Se ha eliminado correctamente tu foto de perfil.';
+        } else {
+            $message = 'Actualmente no posees una foto de perfil que eliminar.';
+        }
         return redirect()
                 ->to('/account')
                 ->with('message', $message);
